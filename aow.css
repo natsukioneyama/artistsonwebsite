@@ -1,0 +1,439 @@
+/* 全体リセット軽め */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ベース */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  background: #ffffff;
+}
+ 
+/* レイアウトコンテナ共通 */
+.site-header,
+.site-main,
+.site-footer {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* ヘッダー（黒文字） */
+.site-header {
+  padding: 1.5rem 1.25rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  position: relative; /* ← 追加：ボタンとメニューの基準にする */
+}
+
+
+.site-header h1 {
+  font-size: 1.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.site-header p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #000000;
+}
+
+/* メイン（白文字は指定しない：section内にのみ適用） */
+.site-main {
+  padding: 0 0 3rem;
+}
+
+/* セクション（黒背景 + 白文字） */
+.site-main section {
+  margin-top: 1.5rem;
+  padding: 1.75rem 1.5rem;
+  background: #000000;
+  color: #ffffff;  /* ←ここに白文字をまとめる */
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(147, 32, 32, 0.02);
+  overflow: hidden;
+}
+
+/* 見出し（白） */
+.site-main h2,
+.site-main h3 {
+  color: #ffffff;
+}
+
+
+.site-main h3 {
+  display: inline-block;
+  border-bottom: 1.5px solid #ffffff;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.8rem;
+}
+
+
+/* 見出し（タイトルは白地のラベル風） */
+.site-main h2 {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  margin: 0 0 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background: #ffffff;   /* タイトルだけ白背景 */
+  color: #000000;        /* 黒文字 */
+  border-radius: 5px;  /* カプセル型 */
+}
+
+/* セクション内の小見出し（質問タイトルなど） */
+.site-main h3 {
+  font-size: 1.05rem;
+  margin: 1.5rem 0 0.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* 本文テキスト（少し落ち着いたサイズ） */
+.site-main p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.site-main p + p {
+  margin-top: 0.5rem;
+}
+
+
+/* リスト */
+.site-main ul,
+.site-main ol {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+  padding: 0;
+}
+
+.site-main li {
+  margin: 0.2rem 0;
+}
+
+/* 強調 */
+.site-main strong {
+  font-weight: 600;
+}
+
+/* FAQ 見出し */
+#faq h3,
+#faq-fr h3,
+#faq-ja h3 {
+  display: block;        /* ← これを追加 */
+  margin-top: 1.25rem;
+}
+
+
+/* 強調サマリーのボックス */
+.summary-box {
+  margin: 2rem 0;
+  padding: 2rem 1.5rem;
+  border: 2px solid #b8b8b8;         /* 少し濃いグレーの枠線 */
+  color: #000;
+  line-height: 1.9;
+}
+
+
+
+
+.summary-outer {
+  background: #d6d6d6;        /* ちょっとだけ明るいグレー */
+  border-radius: 14px;
+  padding: 0.4rem;
+  margin: 2rem 0;
+}
+
+.summary-inner {
+  background: #f2f2f2;        /* かなり明るめのグレー */
+  border-radius: 10px;
+  padding: 1.8rem 1.4rem;
+  color: #000;
+  line-height: 1.9;
+}
+
+/* 「つまり、」ラベル：少し控えめに */
+.site-main .summary-label {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;  /* 900 → 600 にして柔らかく */
+  color: #000;
+}
+
+/* メインの一文：太字だけど“叫ばない”感じに */
+.site-main .summary-main {
+  margin: 0;
+  text-align: center;
+  font-size: 0.98rem;  /* ほんの少し小さく */
+  font-weight: 700;    /* 900 → 700 に */
+  letter-spacing: 0.02em;
+  color: #000;
+}
+
+
+
+
+
+
+
+/* フッター（黒文字） */
+.site-footer {
+  padding: 1.5rem 1.25rem;
+  border-top: 1px solid #000000;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* 言語ブロックの表示/非表示 */
+.lang {
+  display: none;
+}
+.lang.is-active {
+  display: block;
+}
+
+/* 言語スイッチ */
+.lang-switch {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+/* ボタン */
+.lang-switch button {
+  min-width: 66px;
+  text-align: center;
+}
+
+.lang-switch button[data-lang] {
+  background: none;
+  border: .75px solid transparent;
+  color: #000000;
+  padding: 8px 18px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* hover */
+.lang-switch button[data-lang]:hover {
+  background: none;
+  color: #000000;
+}
+
+/* current */
+.lang-switch button.is-current {
+  border-color: #000000;
+}
+
+@media (max-width: 768px) {
+  .site-header,
+  .site-main,
+  .site-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .site-main section {
+    padding-left: .75rem;
+    padding-right: .75rem;
+  }
+}
+
+
+
+.menu-toggle {
+  position: fixed;
+  top: 1.1rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: #ffffff;
+  border-radius: 999px;
+  cursor: pointer;
+  z-index: 9999;
+  position: fixed;
+}
+
+/* 基本の3本線（絶対配置） */
+.menu-toggle .bar {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 2px;
+  background: #000;
+  border-radius: 999px;
+  transform-origin: center;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform: translateX(-50%);
+}
+
+/* 初期位置：上・中・下の3本 */
+.menu-toggle .bar1 {
+  top: 13px;
+}
+
+.menu-toggle .bar2 {
+  top: 19px;
+}
+
+.menu-toggle .bar3 {
+  top: 25px;
+}
+
+/* 開いた状態（X に変形） */
+.menu-toggle.is-open .bar1 {
+  transform: translate(-50%, 6px) rotate(45deg);
+}
+
+.menu-toggle.is-open .bar2 {
+  opacity: 0;
+}
+
+.menu-toggle.is-open .bar3 {
+  transform: translate(-50%, -6px) rotate(-45deg);
+}
+
+
+.menu-toggle span {
+  display: block;
+  width: 60%;
+  height: 2px;
+  background: #000000;
+  border-radius: 999px;
+}
+
+ @media (min-width: 1024px) { 
+.site-nav.is-open { position: fixed; top: 0; left: 0; right: 0; bottom: 0; padding-top: 8rem; } 
+.menu-toggle span { background: #000; } 
+}
+/* スマホ時：スクロール位置でハンバーガーを出す */
+@media (max-width: 768px) {
+  .menu-toggle {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  /* スクロールで出す用クラス & メニューオープン時は必ず見えるように */
+  .menu-toggle.is-floating,
+  .menu-toggle.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* フルスクリーンのオーバーレイメニュー（C案） */
+.site-nav {
+  position: fixed;
+  inset: 0;                             /* top,right,bottom,left 全て0 */
+  background: rgba(255, 255, 255, 0.937);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out;
+  z-index: 1000;
+}
+
+.site-nav.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+.site-nav li {
+  margin: 0.6rem 0;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #000000;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+/* メイン項目（大きめ）とサブ項目（小さめ）の差 */
+.site-nav li.nav-main {
+  margin: 0.8rem 0;
+  border-bottom: 1px solid #000000;
+}
+
+.site-nav li.nav-sub {
+  margin: 0.15rem 0;
+}
+
+.site-nav li.nav-sub a {
+  font-size: .8rem;
+  opacity: 0.8;
+}
+
+
+
+
+.go-top {
+  position: fixed;
+  bottom: 1.5rem;       /* ハンバーガーと並ぶ位置 */
+  right: 1.25rem;       /* ハンバーガーと同じ距離 */
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  display: none;         /* 初期状態は非表示 */
+  align-items: center;
+  justify-content: center;
+  z-index: （00;         /* ハンバーガーの少し下に */
+}
+
+/* ページの100px以上スクロールで出す */
+.go-top.show {
+  display: flex;
+}
+
+
+/* ナビオーバーレイ中はページ本体のスクロールを止める */
+body.nav-locked {
+  overflow: hidden;
+}
