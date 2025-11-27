@@ -105,7 +105,8 @@
     <p> After testing multiple platforms and still feeling unsatisfied, I eventually decided to learn how to code and build my own site from scratch. I started at the perfect moment: just as AI tools were rapidly evolving. This made it possible—even for someone like me, with only beginner-level programming skills—to create a clean, stable, agency-quality portfolio website. </p> 
     <p> In terms of cost transparency, usability, and long-term stability, I now feel that this approach offers more control and clarity than many professional web designers can provide. </p> 
     <p> Thanks to a combination of hand-written code, modern tools, and AI, I can now offer a system that is simple, transparent, and easy to maintain—not only for myself, but also for the artists around me. For independent creatives working every day in a competitive city like Paris, this has become one of the most practical and efficient options available for maintaining a strong, reliable portfolio. </p> 
-  </section>
+     <p class="intro-sign">— Natsuki Oneyama</p>
+   </section>
 
   <section id="about-service">
   <h2>About This Service</h2>
@@ -748,7 +749,8 @@
     Pour les créatifs indépendants travaillant chaque jour dans une ville compétitive comme Paris, 
     cela représente l’une des options les plus efficaces et réalistes pour maintenir un portfolio fiable.
   </p>
-</section>
+  <p class="intro-sign">— Natsuki Oneyama</p>
+  </section>
   
 <section id="about-service-fr">
   <h2>À propos de ce service</h2>
@@ -1409,6 +1411,7 @@
   <p>さまざまなサイトサービスを試しても不満が解消されず、最終的に自分でコードを学ぶことを決めました。ちょうど AI 技術が大きく進化したタイミングでもあり、私のような初心者レベルのプログラマーでも、クリーンで安定した、エージェンシー並みのポートフォリオサイトを作れる時代になりました。そして、コストの透明性・使いやすさ・長期的な維持のしやすさという点では、多くのプロのウェブデザイナー以上のものを提供できていると感じています。</p>
 
   <p>コード、モダンなツール、そして AI。この組み合わせのおかげで、私自身にも、そして身近なアーティスト仲間にも、最大限シンプルで透明性があり、コントロールしやすい仕組みを用意できるようになりました。競争の激しいパリという街で、毎日現場で戦うインディペンデントなアーティストにとって、これはヘアメイクの仕事に最適化された、ひとつの“最良の選択肢”になっていると思います。</p>
+  <p class="intro-sign">— Natsuki Oneyama</p>
 </section>
 
 <section id="about-service-ja">
@@ -1914,6 +1917,7 @@
     <p>&copy; Artists on Website – portfolio assistance by Natsuki Oneyama</p>
   </footer>
 
+
   <script>
 (function () {
   const langBlocks  = document.querySelectorAll('.lang');
@@ -2042,15 +2046,13 @@
         document.body.classList.add('nav-locked');   // ← ここを追加
       } else {
         // すでに開いている → トップページへ遷移
-        window.location.href = './artists-on-website.html';
+        window.location.href = './index.html';
       }
 
     });
   }
 
 
-
-  // メニューリンク → 現在言語の該当セクションへスクロール
     // メニューリンク → 現在言語の該当セクションへスクロール
   navLinks.forEach(link => {
     link.addEventListener('click', function (e) {
@@ -2129,6 +2131,42 @@
     });
   });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const footer = document.querySelector("footer");
+  const btn = document.querySelector(".go-top");
+
+  if (!footer || !btn) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // フッターの高さを取得
+        const footerHeight = footer.getBoundingClientRect().height;
+
+        // iPhone の safe-area 下部 (ホームバー) を取得
+        const safe = parseInt(getComputedStyle(document.documentElement)
+          .getPropertyValue("env(safe-area-inset-bottom)") || 0);
+
+        // ボタンをフッターの上にちょうど乗せる
+        btn.style.bottom = `${footerHeight + safe + 16}px`;  
+        // ↑16px = 1rem 相当の余白（好みで調整）
+      } else {
+        // 通常位置に戻す
+        btn.style.bottom = "1.5rem";
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.01,
+  });
+
+  io.observe(footer);
+});
+</script>
+
+
 
 
 

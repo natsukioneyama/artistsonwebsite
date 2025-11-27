@@ -140,6 +140,17 @@ body {
 }
 
 
+.site-main p.intro-sign {
+margin-top: 1.5rem; 
+font-size: 1.2rem; 
+}
+
+.intro-sign {
+  font-weight: 800;
+  text-align: right;
+  font-style: italic; /* イタリックにしたければ */
+}
+
 /* 強調サマリーのボックス */
 .summary-box {
   margin: 2rem 0;
@@ -188,18 +199,6 @@ body {
 
 
 
-
-
-
-/* フッター（黒文字） */
-.site-footer {
-  padding: 1.5rem 1.25rem;
-  border-top: 1px solid #000000;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #666;
-}
-
 /* 言語ブロックの表示/非表示 */
 .lang {
   display: none;
@@ -242,6 +241,8 @@ body {
 .lang-switch button.is-current {
   border-color: #000000;
 }
+
+
 
 @media (max-width: 768px) {
   .site-header,
@@ -342,12 +343,6 @@ body {
 
 
 
-
-
-
-
-
-
 /* フルスクリーンのオーバーレイメニュー（C案） */
 .site-nav {
   position: fixed;
@@ -407,7 +402,14 @@ body {
 
 
 
-
+/* フッター（黒文字） */
+.site-footer {
+  padding: 1.5rem 1.25rem;
+  border-top: 1px solid #000000;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+}
 .go-top {
   position: fixed;
   bottom: 1.5rem;       /* ハンバーガーと並ぶ位置 */
@@ -424,7 +426,8 @@ body {
   display: none;         /* 初期状態は非表示 */
   align-items: center;
   justify-content: center;
-  z-index: （00;         /* ハンバーガーの少し下に */
+  transition: bottom 0.35s ease;
+  z-index: 999;         /* ハンバーガーの少し下に */
 }
 
 /* ページの100px以上スクロールで出す */
