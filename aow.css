@@ -204,19 +204,8 @@ font-size: 1rem;
   font-size: 1.1rem;
   font-weight: 600;  /* 900 → 600 にして柔らかく */
   color: #000;
-}
-
-/* メインの一文：太字だけど“叫ばない”感じに */
-.site-main .summary-main {
-  margin: 0;
   text-align: center;
-  font-size: 0.98rem;  /* ほんの少し小さく */
-  font-weight: 700;    /* 900 → 700 に */
-  letter-spacing: 0.02em;
-  color: #000;
 }
-
-
 
 
 /* 言語ブロックの表示/非表示 */
