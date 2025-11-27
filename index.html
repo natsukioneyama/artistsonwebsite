@@ -2034,23 +2034,25 @@
     // ハンバーガー：
   // 閉じている時 → メニューを開く
   // 開いている時 → メインサイトに戻る
-  if (menuToggle && siteNav) {
-    menuToggle.addEventListener('click', function () {
-      const isOpen = siteNav.classList.contains('is-open');
+if (menuToggle && siteNav) {
+  menuToggle.addEventListener('click', function () {
+    const isOpen = siteNav.classList.contains('is-open');
 
-      if (!isOpen) {
-        // まだ開いていない → 開く
-        siteNav.classList.add('is-open');
-        menuToggle.classList.add('is-open');
-        menuToggle.setAttribute('aria-expanded', 'true');
-        document.body.classList.add('nav-locked');   // ← ここを追加
-      } else {
-        // すでに開いている → トップページへ遷移
-        window.location.href = './index.html';
-      }
-
-    });
-  }
+    if (!isOpen) {
+      // まだ開いていない → 開く
+      siteNav.classList.add('is-open');
+      menuToggle.classList.add('is-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('nav-locked');
+    } else {
+      // すでに開いている → メニューだけ閉じる（ページ遷移しない）
+      siteNav.classList.remove('is-open');
+      menuToggle.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-locked');
+    }
+  });
+}
 
 
     // メニューリンク → 現在言語の該当セクションへスクロール
