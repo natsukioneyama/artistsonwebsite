@@ -482,5 +482,6 @@ body.nav-locked {
 .note-warning {
   color: #a9ec4b; /* 少し深い赤 */
   font-weight: 500;
+  text-decoration: none;
 }
 
