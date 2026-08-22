@@ -208,8 +208,8 @@ a {
   font-size: 42px !important;
   line-height: 1 !important;
   letter-spacing: -0.04em;
-    margin: 0 0 20px;
-
+  margin: 0 0 20px;
+  color:#c30505
 }
 
 .offer-label {
