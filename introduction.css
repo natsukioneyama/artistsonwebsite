@@ -928,6 +928,12 @@ a {
   text-transform: uppercase;
 }
 
+.lang-ja h2 {
+  font-size: clamp(36px, 5.5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
 .site-main h3,
 #terms-en h3,
 .website-info h3 {
