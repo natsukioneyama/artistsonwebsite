@@ -774,6 +774,9 @@ opacity: 0.7;
   --aow-paper: #f4f1ea;
   --aow-ink: #111111;
   --aow-red: #c30505;
+  --aow-col: 760px;
+  --aow-col-wide: 1100px;
+  --aow-gutter: 24px;
 }
 
 html {
@@ -864,16 +867,37 @@ a {
 .site-main section,
 .showcase-section,
 .contact-section {
+  display: grid;
+  grid-template-columns:
+    minmax(var(--aow-gutter), 1fr)
+    minmax(0, calc((var(--aow-col-wide) - var(--aow-col)) / 2))
+    minmax(0, var(--aow-col))
+    minmax(0, calc((var(--aow-col-wide) - var(--aow-col)) / 2))
+    minmax(var(--aow-gutter), 1fr);
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 90px 24px;
+  padding: 90px 0;
   border: 0;
   border-radius: 0;
   box-shadow: none;
   overflow: visible;
   background: var(--aow-paper);
   color: var(--aow-ink);
+}
+
+/* Shared 760px content column: every direct child (h2, h3, p, ul, ol...)
+   lands in the same track, so left/right edges line up as one block. */
+.site-main section > *,
+.showcase-section > *,
+.contact-section > * {
+  grid-column: 3;
+}
+
+/* Selected Websites video grid is the one deliberate exception: it spans
+   the wider 1100px track, centered on the same axis as the text column. */
+.showcase-section .website-showcase {
+  grid-column: 2 / 5;
 }
 
 .site-main section:nth-of-type(even) {
@@ -890,14 +914,14 @@ a {
 .showcase-section h2,
 .contact-section h2 {
   display: block;
-  max-width: 1100px;
+  max-width: 760px;
   margin: 0 0 48px;
   padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
   color: inherit;
-  font-size: clamp(42px, 7vw, 96px);
+  font-size: clamp(42px, 7vw, 64px);
   font-weight: 700;
   line-height: .95;
   letter-spacing: -.06em;
@@ -1000,6 +1024,8 @@ a {
 }
 
 .faq-toggle {
+  justify-self: start;
+  width: fit-content;
   margin: 40px 0 0;
   padding: 12px 20px;
   border: 1px solid currentColor;
@@ -1013,9 +1039,7 @@ a {
 
 .contact-section {
   min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-content: center;
   text-align: left;
 }
 
@@ -1078,7 +1102,21 @@ a {
   .site-main section,
   .showcase-section,
   .contact-section {
-    padding: 72px 16px;
+    grid-template-columns:
+      minmax(16px, 1fr)
+      minmax(0, var(--aow-col))
+      minmax(16px, 1fr);
+    padding: 72px 0;
+  }
+
+  .site-main section > *,
+  .showcase-section > *,
+  .contact-section > * {
+    grid-column: 2;
+  }
+
+  .showcase-section .website-showcase {
+    grid-column: 2;
   }
 
   .site-main h2,
