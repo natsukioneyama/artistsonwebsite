@@ -673,6 +673,14 @@ a {
   color: #ff3b30;
 }
 
+.site-main section[id^="limit-"],
+.site-main section[id^="pricing-"],
+.site-main section[id^="github-"],
+.site-main section[id^="terms-"] {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
 .faq-toggle {
   justify-self: start;
   width: fit-content;
@@ -775,6 +783,15 @@ a {
   .site-footer {
     padding: 28px 16px;
   }
+
+  .site-main section[id^="limit-"],
+.site-main section[id^="pricing-"],
+.site-main section[id^="github-"],
+.site-main section[id^="terms-"] {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
 }
 
 @media (max-width: 699px) {
