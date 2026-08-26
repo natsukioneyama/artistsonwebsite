@@ -11,156 +11,17 @@ html, body {
 }
 
 /* ベース */
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  background: #ffffff;
-}
- 
-/* レイアウトコンテナ共通 */
-.site-header,
-.site-main,
-.site-footer {
-  max-width: 750px;
-  margin: 0 auto;
-}
 
-/* ヘッダー（黒文字） */
-.site-header {
-  padding: 1.5rem 1.25rem 1.5rem;
-  text-align: center;
-  border-bottom: 1px solid #000000;
-  margin-bottom: 1.5rem;
-  color: #000000;
-  position: relative; /* ← 追加：ボタンとメニューの基準にする */
-}
-
-
-.aow-logo{
-  font-family: "highest-praise", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2.1rem;
-  letter-spacing: 0.02em;
-  margin: 0 0 0.9rem;
-}
-
-.site-header p {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-  margin: 0.25rem 0;
-  font-size: 0.9rem;
-  color: #000000;
-}
-
-/* メイン（白文字は指定しない：section内にのみ適用） */
-.site-main {
-  padding: 0 0 3rem;
-}
-
-/* セクション（黒背景 + 白文字） */
-.site-main section {
-  margin-top: 1.5rem;
-  padding: 1.75rem 1.5rem;
-  background: #000000;
-  color: #ffffff;  /* ←ここに白文字をまとめる */
-  border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(147, 32, 32, 0.02);
-  overflow: hidden;
-}
-
-/* 見出し（白） */
-.site-main h2,
-.site-main h3 {
-  color: #ffffff;
-}
-
-
-/* 見出し（タイトルは白地のラベル風） */
-.site-main h2 {
-  display: inline-block;
-  padding: 0.35rem 0.9rem;
-  margin: 0 0 1.2rem;
-  font-size: 0.8rem;
-  font-weight: 1000;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  background: #ffffff;   /* タイトルだけ白背景 */
-  color: #000000;        /* 黒文字 */
-  border-radius: 5px;  /* カプセル型 */
-}
-
-/* セクション内の小見出し（質問タイトルなど） */
-.site-main h3 {
-  display: block;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #ffffff;
-
-  margin: 2rem 0 1rem;
-  padding-bottom: .45rem;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-}
-
-/* 本文テキスト（少し落ち着いたサイズ） */
-.site-main p {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-.site-main p + p {
-  margin-top: 0.5rem;
-}
-
-.model-caption {
-  font-weight: 600;          /* 太字 */
-  text-decoration: underline; /* 下線 */
-}
-
-
-
-
-/* about 内リンク（natsukioneyama.com） */
-#about-service a,
-#about-service-fr a,
-#about-service-ja a {
-  text-decoration: none;
-  color: #a9ec4b;   /* 好きな色 */
-}
-
-#about-service a:hover,
-#about-service-fr a:hover,
-#about-service-ja a:hover {
-  opacity: 0.7;     /* 任意の hover 効果 */
-}
-
-
-
-/* リスト */
-.site-main ul,
-.site-main ol {
-  margin: 0.5rem 0 0.75rem 1.25rem;
-  padding: 0;
-}
-
-.site-main li {
-  margin: 0.2rem 0;
-}
-
-/* 強調 */
-.site-main strong {
-  font-weight: 600;
-}
-
-/* FAQ 見出し */
-#faq h3,
+/* FAQ 見出し（2問目以降の間隔） */
 #faq-fr h3,
 #faq-ja h3 {
-  display: block;        /* ← これを追加 */
   margin-top: 1.25rem;
+}
+
+/* 最初のh3はh2直後ルールで0にしたいが、上のID指定の方が詳細度が高く勝ってしまうため個別に上書き */
+#faq-fr h3:first-of-type,
+#faq-ja h3:first-of-type {
+  margin-top: 0;
 }
 
 
@@ -175,48 +36,6 @@ font-size: 1rem;
   font-style: italic; /* イタリックにしたければ */
 }
 
-/* 強調サマリーのボックス */
-.summary-box {
-  margin: 2rem 0;
-  padding: 2rem 1.5rem;
-  border: 2px solid #b8b8b8;         /* 少し濃いグレーの枠線 */
-  color: #000;
-  line-height: 1.9;
-}
-
-.summary-outer {
-  background: rgba(210,210,210,.88);
-  border-radius: 14px;
-  padding: 0.4rem;
-  margin: 2rem 0;
-}
-
-.summary-inner {
-  background: rgba(248,248,248,.96);
-  border-radius: 10px;
-  padding: 1.8rem 1.4rem;
-  color: #000;
-  line-height: 1.9;
-}
-
-/* 「つまり、」ラベル：少し控えめに */
-.site-main .summary-label {
-  margin: 0 0 0.4rem;
-  font-size: .9rem;
-  font-weight: 600;  /* 900 → 600 にして柔らかく */
-  color: #000;
-  text-align: center;
-}
-
-.site-main .summary-txt{
-  margin: 0 0 0.4rem;
-  font-size: .8rem;
-  font-weight: 600;  /* 900 → 600 にして柔らかく */
-  color: #2a2a2a;
-  text-align: center;
-}
-
-
 /* 言語ブロックの表示/非表示 */
 .lang {
   display: none;
@@ -227,55 +46,23 @@ font-size: 1rem;
 
 /* 言語スイッチ */
 .lang-switch {
-  margin-top: 0.75rem;
   display: flex;
-  justify-content: center;
-  gap: 0.6rem;
 }
 
 /* ボタン */
 .lang-switch button {
-  min-width: 66px;
   text-align: center;
 }
 
 .lang-switch button[data-lang] {
   background: none;
-  border: .75px solid transparent;
-  color: #000000;
-  padding: 8px 18px;
-  border-radius: 5px;
-  font-size: 12px;
   cursor: pointer;
 }
 
 /* hover */
 .lang-switch button[data-lang]:hover {
   background: none;
-  color: #000000;
 }
-
-/* current */
-.lang-switch button.is-current {
-  border-color: #000000;
-}
-
-
-
-@media (max-width: 768px) {
-  .site-header,
-  .site-main,
-  .site-footer {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-bottom: .8rem;
-  }
-  .site-main section {
-    padding-left: .75rem;
-    padding-right: .75rem;
-  }
-}
-
 
 
 .menu-toggle {
@@ -289,7 +76,6 @@ font-size: 1rem;
   border-radius: 999px;
   cursor: pointer;
   z-index: 9999;
-  position: fixed;
 }
 
 /* 基本の3本線（絶対配置） */
@@ -387,7 +173,7 @@ font-size: 1rem;
   margin: 0;
   padding: 0;
   text-align: center;
-  gap: .35rem;      
+  gap: .5rem;
 }
 
 
@@ -408,11 +194,11 @@ font-size: 1rem;
 }
 /* メイン項目（大きめ）とサブ項目（小さめ）の差 */
 .site-nav li.nav-main {
-  margin: 0.8rem 0;
+  margin: 1rem 0;
 }
 
 .site-nav li.nav-sub {
-  margin: 0.15rem 0;
+  margin: .25rem 0;
 }
 
 .site-nav li.nav-sub a {
@@ -422,14 +208,6 @@ font-size: 1rem;
 
 
 
-/* フッター（黒文字） */
-.site-footer {
-  padding: 1.5rem 1.25rem;
-  border-top: 1px solid #000000;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #666;
-}
 .go-top {
   position: fixed;
   bottom: 1.5rem;       /* ハンバーガーと並ぶ位置 */
@@ -468,21 +246,14 @@ body.nav-locked {
 }
 
 .faq-toggle {
-  margin: 20px auto 0; /* 上20px、左右auto で中央揃え */
+  display: block;
   background: none;
-  border: none;
-  font-size: 15px;
-  text-decoration: underline;
   cursor: pointer;
-  padding: 0;
-  color: white;
-  display: block;      /* ★中央揃えに必要 */
-  text-align: center;  /* ★テキスト自体も中央揃え */
+  text-align: center;
 }
 
 
 .note-warning {
-  color: #a9ec4b; /* 少し深い赤 */
   font-weight: 500;
   text-decoration: none;
 }
@@ -490,42 +261,11 @@ body.nav-locked {
 
 
 
-
-
-.header-contact {
-margin-top: 14px;
-font-size: 13px;
-opacity: 0.75;
-}
-.header-contact a,
-.footer-contact a {
-color: inherit;
-text-decoration: none;
-}
-.header-contact a:hover,
-.footer-contact a:hover {
-text-decoration: none;
-}
-.footer-contact {
-margin-top: 8px;
-font-size: 13px;
-opacity: 0.7;
-}
-
-
 /* Terms */
 #terms-en h2 {
   display: inline-block;
   width: auto;
   margin: 0 0 48px;
-}
-
-#terms-en h3 {
-  display: block;
-  border-bottom: 1px solid rgba(255,255,255,.35);
-  padding-bottom: .45rem;
-  margin: 0 0 1rem;
-  font-size: 1.05rem;
 }
 
 #terms-en h3:first-of-type {
@@ -551,52 +291,16 @@ opacity: 0.7;
 
 
 
-
-
-
 /* Selected websites / showcase */
 
-.showcase-section {
-  max-width: none;
-  margin-top: 1.5rem;
-  padding: 1.75rem 1.5rem;
-  background: #000;
-  color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.showcase-section h2 {
-  display: inline-block;
-  margin: 0 0 56px;
-}
-
 .section-intro {
-  max-width: 900px;
   margin: 0 0 32px;
-}
-
-.website-showcase {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-top: 28px;
 }
 
 .website-card {
   display: block;
   color: inherit;
   text-decoration: none;
-}
-
-.website-media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #111;
-  margin-bottom: 22px;
 }
 
 .website-media img,
@@ -606,19 +310,6 @@ opacity: 0.7;
   object-fit: cover;
   display: block;
   transition: transform 0.45s ease, opacity 0.45s ease;
-}
-
-.website-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.42);
-  color: #9cff2e;
-  font-weight: 700;
-  opacity: 0;
-  transition: opacity 0.35s ease;
 }
 
 .website-card:hover .website-media img,
@@ -631,25 +322,8 @@ opacity: 0.7;
   opacity: 1;
 }
 
-.website-info {
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-  padding-top: 18px;
-}
-
-.website-info h3 {
-  margin: 0 0 12px;
-  color: #9cff2e;
-  font-size: 1.15em;
-  text-align: center;
-}
-
 .website-info p {
   margin: 0;
-}
-
-.showcase-note {
-  max-width: 900px;
-  margin-top: 48px;
 }
 
 .showcase-note p {
@@ -663,29 +337,6 @@ opacity: 0.7;
 }
 
 
-/* Mobile */
-
-@media (max-width: 900px) {
-
-  .showcase-section h2 {
-    margin-bottom: 40px;
-  }
-
-  .website-showcase {
-    grid-template-columns: 1fr;
-    gap: 44px;
-  }
-
-  .website-media {
-    margin-bottom: 18px;
-  }
-
-  .showcase-note {
-    margin-top: 44px;
-  }
-}
-
-
 
 
 /* Selected Websites を少し目立たせる */
@@ -696,18 +347,6 @@ opacity: 0.7;
 
 .site-nav li.nav-feature {
   margin: 1.8rem 0;
-}
-
-.site-nav li.nav-main {
-    margin: 1rem 0;
-}
-
-.site-nav li.nav-sub {
-    margin: .25rem 0;
-}
-
-.site-nav ul {
-    gap: .5rem;
 }
 
 
@@ -731,42 +370,10 @@ opacity: 0.7;
   margin-top: 48px;
 }
 
-#closing-en .intro-text {
-    max-width: 760px;
-}
-
-/* Contact section */
-.contact-section {
-  max-width: 900px;
-  margin: 56px auto 80px;
-  padding: 0 32px;
-  text-align: left;
-}
-
-.contact-section h2 {
-  display: inline-block;
-  margin: 0 0 20px;
-  padding: 10px 22px;
-  background: #fff;
-  color: #000;
-  border-radius: 10px;
-
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
-
-.contact-section p {
-  margin: 12px 0;
-  text-align: center;
-}
-
 .contact-section a {
   color: inherit;
   text-decoration: none;
   transition: opacity .2s ease;
-  font-size: 0.9rem;
 }
 
 .contact-section a:hover {
@@ -818,6 +425,7 @@ a {
 }
 
 .site-header {
+  position: relative; /* ← 追加：ボタンとメニューの基準にする */
   min-height: 55vh;
   padding: 120px 24px 64px;
   margin: 0;
@@ -942,8 +550,8 @@ a {
 }
 
 /* h2直後の要素の margin-top を打ち消し、h2の margin-bottom(48px)だけで間隔を揃える */
-.site-main h2 + * {
-  margin-top: 0 !important;
+.site-main h2 + h3 {
+  margin-top: 0;
 }
 
 .lang-ja h2 {
@@ -953,8 +561,7 @@ a {
 }
 
 .site-main h3,
-#terms-en h3,
-.website-info h3 {
+#terms-en h3 {
   max-width: 760px;
   margin: 56px 0 18px;
   padding: 0 0 14px;
@@ -1003,12 +610,17 @@ a {
 }
 
 .website-showcase {
+  display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
   margin: 56px 0 0;
 }
 
 .website-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
   margin: 0;
   border-radius: 0;
   background: var(--aow-ink);
@@ -1024,12 +636,26 @@ a {
   margin: 0;
   padding: 0;
   border: 0;
+  color: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   text-align: left;
 }
 
 .website-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, .55);
   color: var(--aow-paper);
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.35s ease;
   font-size: 13px;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -1105,12 +731,6 @@ a {
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   letter-spacing: .04em;
-}
-
-.summary-box,
-.summary-outer,
-.summary-inner {
-  border-radius: 0;
 }
 
 @media (max-width: 900px) {
