@@ -123,6 +123,10 @@ a {
   letter-spacing: -0.06em;
   text-transform: uppercase;
 }
+#service h2 {
+  font-size: clamp(38px, 5vw, 68px);
+  white-space: nowrap;
+}
 
 .section p {
   width: 100%;
@@ -325,6 +329,9 @@ a {
 .demo-item figcaption {
   margin-top: 14px;
   font-size: 16px;
+}
+#service h2 {
+  white-space: normal;
 }
 }
 
