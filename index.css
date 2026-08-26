@@ -125,11 +125,13 @@ a {
 }
 
 .section p {
+  width: 100%;
   max-width: 760px;
   margin: 0 auto 18px;
-  font-size: 18px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.5;
 }
+
 
 .grid {
   display: grid;
@@ -436,5 +438,4 @@ a {
 
 .demo-showcase + p {
   margin-top: 70px;
-  max-width: 720px;
 }
