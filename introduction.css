@@ -517,7 +517,7 @@ opacity: 0.7;
 #terms-en h2 {
   display: inline-block;
   width: auto;
-  margin: 0 0 1.5rem;
+  margin: 0 0 48px;
 }
 
 #terms-en h3 {
@@ -826,7 +826,7 @@ a {
   max-width: 1200px;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(56px, 11vw, 150px);
+  font-size: clamp(56px, 11vw, 130px);
   font-weight: 700;
   font-style: normal;
   line-height: .9;
@@ -926,6 +926,11 @@ a {
   line-height: .95;
   letter-spacing: -.06em;
   text-transform: uppercase;
+}
+
+/* h2直後の要素の margin-top を打ち消し、h2の margin-bottom(48px)だけで間隔を揃える */
+.site-main h2 + * {
+  margin-top: 0 !important;
 }
 
 .lang-ja h2 {
@@ -1125,12 +1130,6 @@ a {
     grid-column: 2;
   }
 
-  .site-main h2,
-  .showcase-section h2,
-  .contact-section h2 {
-    margin-bottom: 36px;
-  }
-
   .site-main p {
     font-size: 16px;
   }
@@ -1142,5 +1141,18 @@ a {
 
   .site-footer {
     padding: 28px 16px;
+  }
+}
+
+@media (max-width: 699px) {
+  .site-header {
+    min-height: auto;
+    padding: 72px 16px 36px;
+  }
+
+  .contact-section {
+    min-height: auto;
+    padding: 72px 16px;
+    align-content: start;
   }
 }
