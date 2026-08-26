@@ -207,9 +207,18 @@ a {
 .price {
   font-size: 42px !important;
   line-height: 1 !important;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.04em;
   margin: 0 0 20px;
   color:#c30505
+}
+
+.rate-note {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+   color:#c30505
 }
 
 .offer-label {
@@ -220,7 +229,6 @@ a {
   letter-spacing: 0.08em;
   opacity: 0.7;
 }
-
 
 .note {
   margin-top: 36px !important;
